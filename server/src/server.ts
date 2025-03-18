@@ -1,8 +1,13 @@
 import express from 'express';
 import path from 'path';
+import { fileURLToPath } from 'url';
 
 import db from './config/connection.js';
 import routes from './routes/index.js';
+
+// Define __dirname manually
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 await db();
 
