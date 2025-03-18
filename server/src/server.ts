@@ -19,11 +19,11 @@ app.use(express.json());
 app.use(routes);
 
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.resolve(__dirname, '../client/dist')));
+  app.use(express.static(path.resolve(__dirname, '../../client/dist')));
 
    app.get('*', (_req, res) => {
     // res.sendFile('../client/dist/index.html');
-    res.sendFile(path.resolve(__dirname, '../client/dist', 'index.html'));
+    res.sendFile(path.resolve(__dirname, '../../client/dist', 'index.html'));
   });
 }
 
